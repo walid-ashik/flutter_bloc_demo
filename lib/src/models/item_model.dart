@@ -37,6 +37,8 @@ class _Result {
   List<int> _genre_ids = [];
   String _release_date;
   String _overview;
+  String _title;
+  String _backdrop_path;
 
   _Result(result) {
     _id = result['id'];
@@ -45,16 +47,21 @@ class _Result {
     _video = result['video'];
     _poster_path = result['poster_path'];
     _adult = result['adult'];
+    _title = result['title'];
     _release_date = result['release_date'];
+
     for (int i = 0; i < result['genre_ids'].length; i++) {
       _genre_ids.add(result['genre_ids'][i]);
     }
     _overview = result['overview'];
+    _backdrop_path = result['backdrop_path'];
   }
 
   int get id => _id;
 
   int get vote_count => _vote_count;
+
+  String get title => _title;
 
   double get vote_average => _vote_average;
 
@@ -67,4 +74,6 @@ class _Result {
   String get release_date => _release_date;
 
   String get overview => _overview;
+
+  String get backdrop_path => _backdrop_path;
 }
